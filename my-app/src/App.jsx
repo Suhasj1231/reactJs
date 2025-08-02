@@ -1,59 +1,61 @@
 import './App.css'
-import { PrimaryButton, SecondaryButton } from './components/Buttons'
-import Card from './components/Card'
-import DynamicBox from './components/DynamicBox'
-import HelloWorldComponent from './components/HelloWorldComponent'
-import PropComp from './components/PropComp'
+import ConditionalList from './components/ConditionalList'
+
+import VideoCard from './components/VideoCard'
+// import videoData from './data/videoData'
+import videoData from './data/videoData'
 
 function App() {
+const items = ["React", "Vue", "Angular"]
 
-  const propObj ={
-        boxId:"box2",
-        className:"alert",
-        text:"Warning!",
-        bgColor:"crimson"
-  }
+
 
   return (
-   <>
-   hello world
-   <HelloWorldComponent/>
-   <PrimaryButton />
-   <SecondaryButton />
-   <hr />
-   <hr />
-   
-   <PropComp title="My Title" content="This is the content of the prop component." />
-   <PropComp title="Another Title" content="Here is some more content for the prop component." />
-   <hr />
-   <hr />
-   <DynamicBox
-        boxId="box1"
-        className="highlight"
-        text="Hello, I am dynamic!"
-        bgColor="teal"
-      />
-      <DynamicBox
-        {...propObj}
-      />
+    <>
+    {/* <VideoCard 
+  thumbnailUrl="https://img.youtube.com/vi/xyz123/mqdefault.jpg"
+  title="How to Learn React Fast"
+  channelName="CodeWithSuhas"
+  channelLogo="https://example.com/logo.jpg"
+  views="1.4M views"
+  duration="10:45"
+  uploadDate="2 weeks ago"
+  videoUrl="https://youtube.com/watch?v=xyz123"
+/> */}
 
-      <hr />
-      <hr />
-      <div>
-      <Card >
-        <h2>User Profile</h2>
-        <p>Name: Suhas</p>
-        <p>Role: Developer</p>
-      </Card>
 
-      <Card>
-        <h2>Alert</h2>
-        <p>This action is not allowed.</p>
-      </Card>
+
+    {/* <div>
+      <h1>Conditional Rendering Examples</h1>
+
+      <IfExample isLoggedIn={false} />
+      <TernaryExample user={{ name: 'Suhas' }} />
+      <AndExample show={true} />
+      <OrExample name="" />
+    </div> */}
+
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+    {videoData.map((video) => (
+      <VideoCard key={video.id} {...video} />
+    ))}
+  </div>
+</div>
+
+<div className="p-6 space-y-6">
+      <h2 className="text-xl font-bold">Numbered ConditionalList</h2>
+      <ConditionalList layout="numbered" items={items} />
+
+      <h2 className="text-xl font-bold">Alphabetical ConditionalList</h2>
+      <ConditionalList layout="alpha" items={items} />
+
+      <h2 className="text-xl font-bold">Bulleted ConditionalList</h2>
+      <ConditionalList layout="bullet" items={items} />
     </div>
 
-   
-   </>
+
+    </>
+
   )
 }
 
