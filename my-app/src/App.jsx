@@ -1,62 +1,24 @@
-import './App.css'
-import ConditionalList from './components/ConditionalList'
-
-import VideoCard from './components/VideoCard'
-// import videoData from './data/videoData'
-import videoData from './data/videoData'
+import React from 'react';
+import EventComp from './components/EventComp';
+import EventComp2 from './components/EventComp2';
+import EnterKeyInput from './components/EnterKeyInput';
 
 function App() {
-const items = ["React", "Vue", "Angular"]
-
-
+  // const showMessage = (message) => {
+  //   console.log('Message:', message);
+  // };
 
   return (
     <>
-    {/* <VideoCard 
-  thumbnailUrl="https://img.youtube.com/vi/xyz123/mqdefault.jpg"
-  title="How to Learn React Fast"
-  channelName="CodeWithSuhas"
-  channelLogo="https://example.com/logo.jpg"
-  views="1.4M views"
-  duration="10:45"
-  uploadDate="2 weeks ago"
-  videoUrl="https://youtube.com/watch?v=xyz123"
-/> */}
-
-
-
-    {/* <div>
-      <h1>Conditional Rendering Examples</h1>
-
-      <IfExample isLoggedIn={false} />
-      <TernaryExample user={{ name: 'Suhas' }} />
-      <AndExample show={true} />
-      <OrExample name="" />
+    {/* <div className="h-screen flex justify-center items-center bg-gray-900">
+      <EventComp handler={showMessage} msg="This is a custom message!" />
     </div> */}
 
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
-    {videoData.map((video) => (
-      <VideoCard key={video.id} {...video} />
-    ))}
-  </div>
-</div>
+    {/* <EventComp2/> */}
 
-<div className="p-6 space-y-6">
-      <h2 className="text-xl font-bold">Numbered ConditionalList</h2>
-      <ConditionalList layout="numbered" items={items} />
-
-      <h2 className="text-xl font-bold">Alphabetical ConditionalList</h2>
-      <ConditionalList layout="alpha" items={items} />
-
-      <h2 className="text-xl font-bold">Bulleted ConditionalList</h2>
-      <ConditionalList layout="bullet" items={items} />
-    </div>
-
-
+    <EnterKeyInput/>
     </>
-
-  )
+  );
 }
 
-export default App
+export default App;
