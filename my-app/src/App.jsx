@@ -2,6 +2,7 @@ import React from 'react';
 import EventComp from './components/EventComp';
 import EventComp2 from './components/EventComp2';
 import EnterKeyInput from './components/EnterKeyInput';
+import EventBubbleCapture from './components/EventBubbleCapture';
 
 function App() {
   // const showMessage = (message) => {
@@ -16,7 +17,9 @@ function App() {
 
     {/* <EventComp2/> */}
 
-    <EnterKeyInput/>
+    {/* <EnterKeyInput/> */}
+
+    <EventBubbleCapture />
     </>
   );
 }
