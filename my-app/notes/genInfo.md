@@ -1,30 +1,21 @@
-## 1️⃣ Event Propagation in the DOM
-When an event happens (like a click), the browser processes it in three phases:
+## 1️⃣ What Are Hooks?
+Hooks are functions introduced in React 16.8 that let you use state and other React features without writing a class.
+They make React components simpler, more reusable, and cleaner.
 
-Capturing Phase (a.k.a. "trickling down")
+Before Hooks:
+We needed class components for state, lifecycle methods, and refs.
 
-Event travels from the window → document → <html> → <body> → ... → target element.
-
-Happens before the actual target handles the event.
-
-Rarely used in practice.
-
-Target Phase
-
-Event reaches the actual element where it happened.
-
-Bubbling Phase
-
-Event travels back up from the target element → parent → ancestor → window.
-
-This is default in most event listeners unless specified otherwise.
+After Hooks:
+We can do everything in functional components.
 
 
 
-## | Feature           | Bubbling (default)                        | Capturing                                    |
-| ----------------- | ----------------------------------------- | -------------------------------------------- |
-| Direction         | From target **upwards** to ancestors      | From root **downwards** to target            |
-| Default in React? | ✅ Yes                                     | ❌ No (needs explicit setting)                |
-| Use case          | Most event handling (clicks, form events) | Special control before target gets the event |
+## What is useState?
+A React Hook for managing state inside functional components.
+
+It lets you store data that changes over time and re-render the component when that data changes.
+
+
+
 
 

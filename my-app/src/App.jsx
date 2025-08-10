@@ -3,6 +3,8 @@ import EventComp from './components/EventComp';
 import EventComp2 from './components/EventComp2';
 import EnterKeyInput from './components/EnterKeyInput';
 import EventBubbleCapture from './components/EventBubbleCapture';
+import Counter from './components/Counter';
+import Stopwatch from './components/StopWatch';
 
 function App() {
   // const showMessage = (message) => {
@@ -11,15 +13,9 @@ function App() {
 
   return (
     <>
-    {/* <div className="h-screen flex justify-center items-center bg-gray-900">
-      <EventComp handler={showMessage} msg="This is a custom message!" />
-    </div> */}
+{/* <Counter /> */}
 
-    {/* <EventComp2/> */}
-
-    {/* <EnterKeyInput/> */}
-
-    <EventBubbleCapture />
+<Stopwatch />
     </>
   );
 }
