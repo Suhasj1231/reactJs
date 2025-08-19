@@ -5,6 +5,9 @@ import EnterKeyInput from './components/EnterKeyInput';
 import EventBubbleCapture from './components/EventBubbleCapture';
 import Counter from './components/Counter';
 import Stopwatch from './components/StopWatch';
+import ControlledForm from './components/ControlledForm';
+import UncontrolledForm from './components/UncontrolledForm';
+import TemperatureConverter from './components/TemperatureConverter';
 
 function App() {
   // const showMessage = (message) => {
@@ -13,9 +16,13 @@ function App() {
 
   return (
     <>
-{/* <Counter /> */}
+    {/* <ControlledForm/> */}
+    {/* <hr /> */}
+    {/* <hr /> */}
+    {/* <hr /> */}
+    {/* <UncontrolledForm/> */}
+    <TemperatureConverter />
 
-<Stopwatch />
     </>
   );
 }
