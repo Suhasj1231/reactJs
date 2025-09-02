@@ -8,6 +8,7 @@ import Stopwatch from './components/StopWatch';
 import ControlledForm from './components/ControlledForm';
 import UncontrolledForm from './components/UncontrolledForm';
 import TemperatureConverter from './components/TemperatureConverter';
+import EditUsers from './components/Editusers';
 
 function App() {
   // const showMessage = (message) => {
@@ -16,12 +17,7 @@ function App() {
 
   return (
     <>
-    {/* <ControlledForm/> */}
-    {/* <hr /> */}
-    {/* <hr /> */}
-    {/* <hr /> */}
-    {/* <UncontrolledForm/> */}
-    <TemperatureConverter />
+   <EditUsers/>
 
     </>
   );
