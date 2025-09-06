@@ -1,29 +1,78 @@
-## 🔹 What is useEffect?
+## 🔹 What is useReducer?
 
-A React hook that lets you perform side effects in function components.
+A React Hook that is an alternative to useState for managing state.
 
-Side effects = anything that affects something outside React’s rendering cycle:
+Useful when:
 
-Fetching data (API calls)
+The state is complex (e.g., objects, nested values, arrays).
 
-Subscribing to events (WebSocket, DOM listeners)
+State changes involve multiple actions (add, remove, update, toggle).
 
-Setting timers (setTimeout, setInterval)
-
-Updating document.title
-
-Cleaning up resources
+You want clearer state transitions (instead of scattering many setState calls).
 
 
-## 🔹 How it works?
-
-Runs after React renders the component (painted to the DOM).
-
-You can control when it runs using the dependency array.
 
 
-## 🔹 Cleanup in useEffect
+## structure 
+const [state, dispatch] = useReducer(reducer, initialState);
+state → current state value.
 
-If your effect sets up something (like a timer, subscription, or event listener), you should clean it up to avoid memory leaks.
+dispatch → function used to trigger state updates (by sending actions).
 
+reducer → a pure function (state, action) => newState.
+
+initialState → starting state.
+
+
+
+##
+Event (e.g., button click)
+       |
+       v
+dispatch({ type: "increment" })
+       |
+       v
+reducer(state, action)  ---> returns newState
+       |
+       v
+React updates state
+       |
+       v
+Component re-renders with new state
+
+
+
+
+
+## 🔹 When to Use useReducer vs useState
+
+✅ Use useState when:
+
+State is simple (like count, input value, boolean).
+
+✅ Use useReducer when:
+
+State logic is complex.
+
+State depends on previous state a lot.
+
+Multiple ways to update the same state.
+
+
+## ------------------------------------------------------------------------
+##  Context api
+
+## 🔹 What is Context API?
+
+A built-in feature in React to share data globally across components.
+
+Avoids prop drilling → i.e., passing props through multiple components unnecessarily.
+
+Works like a global store for specific data (theme, user, language, etc.).
+
+Think of it like a delivery service:
+
+You (the provider) send data.
+
+Any component (consumer) in your tree can receive it, without each "middleman" passing it down.
 
