@@ -1,17 +1,12 @@
-import React from 'react'
-import EditUsers from './components/Editusers';
-import TodoList from './components/Todolist';
-import { ThemeProvider } from './components/ThemeProvider';
-import Home from './components/Home';
-
+import InputFocus from './components/InputFocus'
+import Timer from './components/Timer'
 const App = () => {
   return (
     <>
-    {/* <EditUsers/> */}
-     <ThemeProvider>
-      <Home />
-    </ThemeProvider>
-    <TodoList/>
+    <Timer/>
+
+    <InputFocus/>
+
     </>
       
   )
