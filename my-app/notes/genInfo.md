@@ -1,24 +1,67 @@
-## Custom Hooks
-🔹 What is a Custom Hook?
+## React.memo
 
-A custom hook is just a JavaScript function whose name starts with use.
+A higher-order component (HOC) that memoizes a component.
 
-Inside it, you can use other hooks (useState, useEffect, useReducer, etc.).
+Prevents re-rendering if the props haven’t changed.
 
-Purpose → avoid repeating code and make logic reusable & modular
+It’s a pure component optimization.
 
 
-## useRef hook : 
-🔹 What is useRef?
 
-useRef is a React hook that gives you a mutable container whose .current property persists across renders.
+## useMemo
 
-Unlike useState, changing a ref does not cause a re-render.
+A hook that memoizes the result of a function (value).
 
-It is commonly used for:
+Used to cache expensive calculations so they don’t run on every render.
 
-Accessing/manipulating DOM elements (instead of document.querySelector).
 
-Storing mutable values that don’t need to trigger a re-render.
 
-Persisting values between renders (like previous state, timers, counters, etc.).
+## useCallback
+
+A hook that memoizes a function definition.
+
+Useful when passing functions as props to child components (to prevent unnecessary re-renders).
+
+
+## Use Cases
+✅ React.memo
+
+When you want to avoid re-rendering of a pure child component that only depends on props.
+
+Good for static props or rarely changing props.
+
+✅ useMemo
+
+When you have expensive computations (e.g., filtering a large list, doing math, generating derived data).
+
+Use it to cache computed values.
+
+✅ useCallback
+
+When passing functions as props to memoized children (React.memo) to prevent unnecessary renders.
+
+Also useful for dependency arrays (e.g., useEffect).
+
+🔹 Best Practices
+
+Don’t overuse — these tools add complexity and memory overhead.
+
+Use them only when performance problems appear.
+
+For simple values/functions, skip them.
+
+Use useMemo for values
+
+Example: const filteredList = useMemo(() => items.filter(...), [items])
+
+Use useCallback for functions
+
+Example: const handleClick = useCallback(() => {...}, [dependency])
+
+Wrap components in React.memo when:
+
+The component is re-rendering often.
+
+The props rarely change.
+
+Measure performance with React DevTools Profiler before optimizing.
